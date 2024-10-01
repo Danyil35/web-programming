@@ -99,3 +99,36 @@ th, td {
     display: flex;
     justify-content: center;
 }
+
+.alert-info {
+    padding: 15px;
+    background-color: #238375;
+    color: white;
+    margin: 0 0 15px 0;
+    border-radius: 15px;
+}
+
+.calc-form{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.calc-form label{
+    margin: 2px 5px;
+}
+
+.calc-form input[type="number"]{
+    margin: 0 0 15px 0;
+    padding: 5px 10px;
+    border-radius: 15px;
+    border: 0;
+}
+
+.calc-form input[type="submit"]{
+    border: 0;
+    font-size: 18px;
+    background: #ff6700;
+    padding: 5px;
+    border-radius: 5px;
+}
