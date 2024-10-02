@@ -11,6 +11,20 @@ body {
     padding: 10px 0;
 }
 
+#header {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 15px;
+}
+
+#footer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 15px;
+}
+
 nav ul {
     list-style-type: none;
     padding: 10px 0;
@@ -131,4 +145,15 @@ th, td {
     background: #ff6700;
     padding: 5px;
     border-radius: 5px;
+}
+
+select {
+    background: transparent;
+    color: white;
+    padding: 5px;
+    border: 0;
+}
+
+select>option {
+    color: black;
 }

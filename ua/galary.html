@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ua">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Історія обчислювальної техніки</title>
+    <link rel="stylesheet" href="../static/css/style.css">
+</head>
+<body>
+    <header id="header">
+        <h1>Історія обчислювальної техніки</h1>
+        <select id="languageSelect">
+            <option value="ua">Українська</option>
+            <option value="en">English</option>
+        </select>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="index.html">Головна</a></li>
+            <li><a href="early_computers.html">Ранні обчислювальні машини</a></li>
+            <li><a href="transistors.html">Транзистори</a></li>
+            <li><a href="microprocessors.html">Мікропроцесори</a></li>
+            <li><a href="personal_computers.html">Персональні комп'ютери</a></li>
+            <li><a href="future_trends.html">Майбутні тенденції</a></li>
+            <li><a href="galary.html">Галерея</a></li>
+            <li><a href="calc.html">Калькулятор</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <form>
+            <input type="radio" name="imageChoice" value="image1">Зображення 1<br>
+            <input type="radio" name="imageChoice" value="image2">Зображення 2<br>
+            <input type="radio" name="imageChoice" value="image3">Зображення 3<br>
+            <input type="radio" name="imageChoice" value="image4">Зображення 4<br>
+            <input type="radio" name="imageChoice" value="image5">Зображення 5<br>
+        </form>
+        <img id="selectedImage" src="" style="display: none;">
+    </main>
+
+    <footer id="footer">
+        <p>2024 Історія обчислювальної техніки.</p>
+        <select id="pageSelect">
+            <option selected hidden value="quick_page">Швидкий перехід на сторінку</option>
+            <option value="index.html">Головна</option>
+            <option value="early_computers.html">Ранні обчислювальні машини</option>
+            <option value="transistors.html">Транзистори</option>
+            <option value="microprocessors.html">Мікропроцесори</option>
+            <option value="personal_computers.html">Персональні комп'ютери</option>
+            <option value="future_trends.html">Майбутні тенденції</option>
+            <option value="galary.html">Галерея</option>
+            <option value="calc.html">Калькулятор</option>
+        </select>
+    </footer>
+
+    <script src="../static/js/lang.js"></script>
+    <script src="../static/js/img-choice.js"></script>
+    <script src="../static/js/static-menu.js"></script>
+    <script src="../static/js/menu-select.js"></script>
+</body>
+</html>
