@@ -1,0 +1,57 @@
+.SurveyStep {
+    display: none;
+}
+
+.SurveyStep.active {
+    display: block;
+}
+
+#surveyForm{
+    margin: 20px;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background: #fafafa;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.form-group input[type="text"], .form-group textarea {
+    width: -webkit-fill-available;
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    resize: none;
+}
+
+.form-group input[type="radio"], .form-group input[type="checkbox"]{
+    float: left;
+}
+
+.SurveyStep button {
+    padding: 10px 20px;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.SurveyStep button#nextForm{
+    background-color: #28a745;
+}
+
+.SurveyStep button#previousForm{
+    background-color: #c72222
+}
+
+.SurveyStep button#sendForm{
+    background-color: #282da7;
+}

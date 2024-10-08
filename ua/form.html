@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="ua">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Форма опитування клієнтів</title>
+    <link rel="stylesheet" href="../static/css/style.css">
+    <link rel="stylesheet" href="../static/css/survey.css">
+</head>
+<body>
+    <header id="header">
+        <h1>Форма опитування клієнтів</h1>
+        <select id="languageSelect">
+            <option value="ua">Українська</option>
+            <option value="en">English</option>
+        </select>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="index.html">Головна</a></li>
+            <li><a href="early_computers.html">Ранні обчислювальні машини</a></li>
+            <li><a href="transistors.html">Транзистори</a></li>
+            <li><a href="microprocessors.html">Мікропроцесори</a></li>
+            <li><a href="personal_computers.html">Персональні комп'ютери</a></li>
+            <li><a href="future_trends.html">Майбутні тенденції</a></li>
+            <li><a href="galary.html">Галерея</a></li>
+            <li><a href="calc.html">Калькулятор</a></li>
+            <li><a href="form.html">Відгук</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <form id="surveyForm">
+            <div id="SurveyStep1" class="SurveyStep active">
+                <h2>Відгук та опитування - Крок 1</h2>
+                <div class="form-group">
+                    <label for="name">Ваше ім'я:</label>
+                    <input type="text" id="name" name="name">
+                </div>
+    
+                <div class="form-group">
+                    <label>Інтерес до історії обчислювальної техніки:</label>
+                    <input type="radio" id="interest_yes" name="historyInterest" value="Цікавить">
+                    <label for="interest_yes">Цікавить</label>
+                    <input type="radio" id="interest_no" name="historyInterest" value="Не цікавить">
+                    <label for="interest_no">Не цікавить</label>
+                </div>
+    
+                <div class="form-group">
+                    <label>Які теми вам цікаві?</label>
+                    <input type="checkbox" id="hardware" name="topics" value="Апаратне забезпечення">
+                    <label for="hardware">Апаратне забезпечення</label>
+                    <input type="checkbox" id="software" name="topics" value="Програмне забезпечення">
+                    <label for="software">Програмне забезпечення</label>
+                    <input type="checkbox" id="history" name="topics" value="Історія технологій">
+                    <label for="history">Історія технологій</label>
+                </div>
+                <div class="form-group">
+                    <label for="message">Повідомлення:</label>
+                    <textarea id="message" name="message" rows="10"></textarea>
+                </div>
+    
+                <button id="nextForm" type="button">Далі</button>
+            </div>
+            <div id="SurveyStep2" class="SurveyStep">
+                <h2>Відгук та опитування - Крок 2</h2>
+                <div class="form-group">
+                    <label for="feedback">Ваші відгуки:</label>
+                    <textarea id="feedback" name="feedback" rows="20" readonly></textarea>
+                </div>
+                <button id="previousForm" type="button">Назад</button>
+                <button id="sendForm" type="button">Відправити</button>
+            </div>
+        </form>
+    </main>
+
+    <footer id="footer">
+        <p>2024 Історія обчислювальної техніки.</p>
+        <select id="pageSelect">
+            <option selected hidden value="quick_page">Швидкий перехід на сторінку</option>
+            <option value="index.html">Головна</option>
+            <option value="early_computers.html">Ранні обчислювальні машини</option>
+            <option value="transistors.html">Транзистори</option>
+            <option value="microprocessors.html">Мікропроцесори</option>
+            <option value="personal_computers.html">Персональні комп'ютери</option>
+            <option value="future_trends.html">Майбутні тенденції</option>
+            <option value="galary.html">Галерея</option>
+            <option value="calc.html">Калькулятор</option>
+            <option value="form.html">Відгук</option>
+        </select>
+    </footer>
+    
+    <script src="../static/js/lang.js"></script>
+    <script src="../static/js/static-menu.js"></script>
+    <script src="../static/js/menu-select.js"></script>
+    <script src="../static/js/survey-form.js"></script>
+</body>
+</html>
