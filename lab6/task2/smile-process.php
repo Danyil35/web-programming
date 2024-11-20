@@ -3,17 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Завдання 1</title>
+    <title>Заміна смайликів (ASCII to IMG)</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
 </head>
 <body>
-    <div class="container mt-5">
+    <div class="container mt-3 d-flex justify-content-between align-items-center">
+        <h1>Заміна смайликів (ASCII to IMG)</h1>
+        <a href="/lab6/task2.php" class="btn btn-secondary">Назад</a>
+    </div>
+    <div class="container mt-3">
         <div class="row bg-body-tertiary rounded border p-2">
             <div class="col-6">
-                <h3>Текст для обробки</h3>
+                <h3>Введіть текст</h3>
                 <form class="mt-3" method="POST">
                     <div class="mb-3">
-                        <textarea class="form-control" name="text" rows=5 class="w-100"></textarea>
+                        <input type="text" class="form-control" name="text" class="w-100">
                     </div>
                     <input class="btn btn-primary" type="submit" value="Обробити">
                 </form>
@@ -24,33 +28,28 @@
                     if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                         $text = $_POST['text'];
 
-                        $processedText = reverseWords($text);
-                        $processedText = htmlspecialchars($processedText);
+                        $editedText = smileAscii2Img($text);
                         echo <<<HTML
                         <div class="mb-3">
-                            <textarea class="form-control" name="text" rows=5 class="w-100" readonly>$processedText</textarea>
+                            $editedText
                         </div>
                         HTML;
                         exit;
                     }
 
-                    function reverseWords($text) {
-                        $lines = explode("\n", $text);
-                        $result = '';
-                    
-                        foreach ($lines as $line) {
-                            $words = preg_split('/\s+/', $line);
-                            $reversedWords = [];
-                        
-                            foreach ($words as $word) {
-                                $reversedWord = strrev($word);
-                                $reversedWords[] = $reversedWord;
-                            }
-                        
-                            $result .= implode(' ', $reversedWords) . "\n";
+                    function smileAscii2Img($text) {
+                        $smileys = [
+                            ':)' => '<img src="/lab6/task2/assets/images/smile.svg" width=50px>',
+                            ':(' => '<img src="/lab6/task2/assets/images/sad.svg" width=50px>',
+                            ':D' => '<img src="/lab6/task2/assets/images/laugh.svg" width=50px>',
+                            ':|' => '<img src="/lab6/task2/assets/images/neutral.svg" width=50px>',
+                            ':P' => '<img src="/lab6/task2/assets/images/tongue.svg" width=50px>'
+                        ];
+                        foreach ($smileys as $smiley => $image) {
+                            $text = str_replace($smiley, $image, $text);
                         }
-                    
-                        return $result;
+                        
+                        return $text;
                     }
                 ?>
             </div>

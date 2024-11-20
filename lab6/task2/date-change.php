@@ -3,11 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Завдання 1</title>
+    <title>Заміна дати</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
 </head>
 <body>
-    <div class="container mt-5">
+    <div class="container mt-3 d-flex justify-content-between align-items-center">
+        <h1>Заміна дати</h1>
+        <a href="/lab6/task2.php" class="btn btn-secondary">Назад</a>
+    </div>
+    <div class="container mt-3">
         <div class="row bg-body-tertiary rounded border p-2">
             <div class="col-6">
                 <h3>Текст для обробки</h3>
@@ -24,32 +28,20 @@
                     if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                         $text = $_POST['text'];
 
-                        $processedText = reverseWords($text);
-                        $processedText = htmlspecialchars($processedText);
+                        $editedText = changeDate($text);
                         echo <<<HTML
-                        <div class="mb-3">
-                            <textarea class="form-control" name="text" rows=5 class="w-100" readonly>$processedText</textarea>
+                        <div class="my-3">
+                            <textarea class="form-control" name="text" rows=5 class="w-100" readonly>$editedText</textarea>
                         </div>
                         HTML;
                         exit;
                     }
 
-                    function reverseWords($text) {
-                        $lines = explode("\n", $text);
-                        $result = '';
-                    
-                        foreach ($lines as $line) {
-                            $words = preg_split('/\s+/', $line);
-                            $reversedWords = [];
+                    function changeDate($text) {
+                        $pattern = '/\b(\d{2})-(\d{2})-(\d{4})\b/';
+                        $replacement = '$3.$2.$1';
+                        $result = preg_replace($pattern, $replacement, $text);
                         
-                            foreach ($words as $word) {
-                                $reversedWord = strrev($word);
-                                $reversedWords[] = $reversedWord;
-                            }
-                        
-                            $result .= implode(' ', $reversedWords) . "\n";
-                        }
-                    
                         return $result;
                     }
                 ?>
